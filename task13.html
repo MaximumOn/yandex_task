@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<script>
+	/*
+	Массив факториалов для чисел от 0 до 9.
+	*/
+	var listFactorials = [1,1,2,6,24,120,720,5040,40320,362880];
+	
+	/*
+	Находит все числа, которые равны сумме факториалов своих цифр.
+	*/
+	function sumFactorials()  {
+		for(var i = 0; i < 1000000; ++i) {
+			var number = i.toString(),
+				sumNumber=0;
+			for (var n = 0; n < number.length; n++){
+				sumNumber = sumNumber + listFactorials[number[n]];
+			}
+			if(sumNumber == i) {
+				document.write(i.toString() + "<br>");
+			}
+		}
+		return 0;
+	}
+	</script>
+</head>
+<body>
+	Список всех чисел, которые равны сумме факториалов своих цифр:<br>
+    <script>
+		sumFactorials();
+	</script>
+</body>
+</html>

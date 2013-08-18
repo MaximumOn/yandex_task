@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ШРИ</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.validate.min.js"></script>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+	$( document ).ready(function() {
+		$('.question-num-wrap').click(function(){
+			$(this).toggleClass('on');
+			if($(this).hasClass('on')) {
+				$(this).next('.question-answer').slideUp();
+				$(this).children('.arrow-up').toggleClass('arrow-up').toggleClass('arrow-down');
+			} else {
+			$(this).next('.question-answer').slideDown();
+			$(this).children('.arrow-down').toggleClass('arrow-up').toggleClass('arrow-down');
+			}
+		});
+		
+		$('#anketa').validate({
+			rules:{
+				year:{
+					required:true,
+					minlength: 4,
+					maxlength: 4,
+					digits: true,
+				},
+				
+				city:{
+					required:true,
+					minlength: 1,
+				},
+				
+				education:{
+					required:true,
+					minlength: 1,
+				},
+				
+				endeducation:{
+					required:true,
+					minlength: 4,
+					maxlength: 4,
+					digits: true,
+				},
+				
+				english:{
+				},
+				
+				school:{
+				required:true,
+				minlength: 1
+				},
+				
+				hear:{
+				required:true,
+				minlength: 1
+				},
+				
+				time:{
+				required:true,
+				minlength: 1
+				},
+				
+				experience:{
+				required:true,
+				minlength: 1
+				},
+				
+				work:{
+				required:true,
+				minlength: 1
+				},
+				
+				program:{
+				required:true,
+				minlength: 1
+				},
+				
+				cmd:{
+				required:true,
+				minlength: 1
+				},
+				
+				factorial:{
+				required:true,
+					url:true,
+				},
+				
+				space:{
+				required:true,
+					url:true,
+				},
+				
+				task:{
+				required:true,
+					url:true,
+				},
+								
+			},
+			errorPlacement: function(error, element) {
+	
+			},
+			highlight: function(element) {
+				$(element).parents('.question').find('.status').removeClass('good').addClass('error1');
+				$('.count').html($('.good').length);
+			},
+			unhighlight: function(element) {
+				$(element).parents('.question').find('.status').addClass('good').removeClass('error1');
+				$('.count').html($('.good').length);
+			}
+		});
+	});
+	</script>
+	<div class="fixed-wrap">
+		<div class="fixed-wrap1000">
+			<div class="fixed-title">
+				<h1>Анкета второй Школы разработки интерфейсов в Москве</h1>
+			</div>
+			<div class="fixed-status">Вы отвелили на <span class="count">0</span> вопросов из 15</div>
+		</div>
+	</div>
+	<div class="wrap1000">
+		<div class="anketa">
+			<div class="header">
+				Яндекс открывает набор во вторую Школу разработки интерфейсов в Москве.
+
+				Для поступления необходимо заполнить анкету с тестовыми заданиями. Приём заявок закрывается 19 августа в 23:59 по московскому времени. По результатам теста мы пригласим в Школу 30-40 человек.
+				<h2>Заполните анкету:</h2>
+			</div>
+		<form id="anketa" action="#" method="POST">
+			<div class="question">
+				<div class="question-num-wrap on">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 1</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Год рождения.</div>
+					<div class="question-answerarea">
+						<input type="text" class="question-input-area" name="year">
+	 				</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap on">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 2</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Город, в котором вы живёте.</div>
+					<div class="question-answerarea">
+						<input type="text" class="question-input-area" name="city">
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap on">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 3</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Вуз, факультет, специальность, кафедра.</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="education"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap on">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 4</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Год окончания вуза.</div>
+					<div class="question-answerarea">
+						<input type="text" class="question-input-area" name="endeducation">
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap on">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 5</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Уровень владения английским языком:</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="english"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 6</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Чего вы ожидаете от участия в Школе?</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="school"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 7</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Откуда вы о нас узнали?</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="hear"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 8</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе?</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="time"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 9</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Расскажите о вашем опыте разработки. Нам будет интересно всё — как серьезный интерфейс, так и просто домашняя страничка.</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="experience"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 10</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Если вы где-нибудь работали, расскажите, какие у вас были должностные обязанности и был ли опыт работы в команде.</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="work"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 11</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Перечислите, какими программными продуктами вы пользуетесь в своей работе — от редактора до специализированных утилит (Intellij Idea, Node.js, Uglify.js, GNU Make). Для каждого инструмента укажите, какие задачи вы с помощью него решаете и почему выбрали именно его.</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="program"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 12</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Пользуетесь ли вы командной строкой? Какими командами вы пользуетесь и какие задачи вы решаете с их помощью? С какими программами вы преимущественно или полностью взаимодействуете через интерфейс командной строки?</div>
+					<div class="question-answerarea">
+						<textarea class="question-textarea-area" name="cmd"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 13</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Напишите на JavaScript функцию, которая выводит список всех чисел, которые равны сумме факториалов своих цифр. Пример такого числа:<br>
+						4! + 0! + 5! + 8! + 5! = 40585<br>
+						В качестве ответа на вопрос пришлите ссылку на http://jsfiddle.net/ с вашим кодом или на ваш репозиторий на https://github.com/.
+					</div>
+					<div class="question-answerarea">
+						<input type="text" class="question-input-area" name="factorial">
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 14</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Вы — пилот грузового межгалактического корабля. Ваша работа — перевозка грузов с одной планету на другую. Грузоподъемность вашего корабля ограничена, поэтому за один рейс вы можете перевезти не более N кг полезного груза. Ваш корабль умеет сообщать свое состояние (местоположение и степень загруженности), а также летать в любую точку пространства. Каждая планета может содержать на себе груз, который можно взять. Также на каждой планете груз можно оставить .<br>
+						Задание<br>
+						Даны незавершенные интерфейсы корабля и планеты. Напишите недостающий код.<br>
+						Полное условие задачи доступно на https://github.com/yandex-shri/introtask-space.<br>
+						В качестве ответа на вопрос пришлите ссылку на http://jsfiddle.net/ с вашим кодом или на ваш репозиторий на https://github.com/.
+					</div>
+					<div class="question-answerarea">
+						<input type="text" class="question-input-area" name="space">
+					</div>
+				</div>
+			</div>
+			<div class="question">
+				<div class="question-num-wrap">
+					<div class="arrow-down"></div>
+					<div class="question-num">Вопрос 15</div>
+					<div class="status"></div>
+				</div>
+				<div class="question-answer">
+					<div class="question-text">Сверстайте форму-анкету с нашими заданиями для кандидатов. Страница должна работать в следующих браузерах: MSIE (8, 9, 10), Google Chrome (26, 27), Firefox (20, 21), Opera (12.15, 12.14), Яндекс.Браузер 1.5. По возможности используйте приёмы безопасной деградации CSS. Страница должна содержать интерактив, реализованный с помощью JS и jQuery. Это может быть:
+						<ul>
+						<li>проверка полноты и правильности заполнения полей (где это возможно);</li>
+						<li>возможность свернуть и развернуть разделы (аккордеон);</li>
+						<li>индикатор заполнения анкеты;</li>
+						<li>что-нибудь ещё.</li>
+						</ul>
+						Подумайте над тем, как эти данные будут отправляться на сервер.<br>
+						Будет плюсом, если вы сверстаете страницу, используя БЭМ.<br>
+						Дополнительные задания
+						<ol>
+						<li>Выполните задание про форму-анкету, используя один из классических шаблонизаторов: Handlebars, mustache, Dust, Jade и т.п.</li>
+						<li>Выполните задание про форму-анкету, используя один из экзотических шаблонизаторов: XSLT, YATE, BEMHTML и т.п.</li>
+						</ol>
+						Разработку необходимо вести на https://github.com/. В качестве ответа на вопрос пришлите ссылку на проект.
+					</div>
+					<div class="question-answerarea">
+						<input type="text" class="question-input-area" name="task">
+					</div>
+				</div>
+			</div>
+			<h2>Расскажите нам о себе:</h2>
+			<div class="question">
+                <table>
+                    <td>
+                    <tr>
+                        <td>Резюме до 250 КБ</td>
+                        <td><input type="file"></td>
+                    </tr>
+                    <tr>
+                        <td>Ссылка на профиль в моем круге </td>
+                        <td><input type="text" class="about-candidate-input"></td>
+                    </tr>
+                    <tr>
+                        <td>Имя, Фамилия </td>
+                        <td><input type="text" class="about-candidate-input" name="myftname"></td>
+                    </tr>
+                    <tr>
+                        <td>Телефон </td>
+                        <td><input type="text" class="about-candidate-input" name="myph"></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail </td>
+                        <td><input type="text" class="about-candidate-input" name="mymil"></td>
+                    </tr>
+                    <tr>
+                        <td>Дополнительные сведения</td>
+                        <td><textarea class="about-candidate-textarea"></textarea></td>
+                    </tr>
+                    </td>
+                </table>
+                <br>
+                <label>Откуда вы узнали о нашем предложении</label>
+                <select>
+                    <option value="0">от HR-менеджера Яндекса</option>
+                    <option value="1">Я.Субботник</option>
+                    <option value="2">Yet another Conference</option>
+                    <option value="3">На другой конференции</option>
+                    <option value="4">Из поиска</option>
+                    <option value="5">По рекомендации</option>
+                    <option value="6">Другое</option>
+                </select>
+                <div><br>
+                    <input type="checkbox">
+                    Я даю свое согласие на передачу в ООО «ЯНДЕКС» резюме и/или анкеты, содержащих мои персональные данные, и согласен с тем, что они будут храниться в ООО «ЯНДЕКС» в течение 5 лет и будут обрабатываться исключительно для целей предложения мне вакансий группы компаний «ЯНДЕКС», в соответствии с Федеральным законом «О персональных данных».
+                </div>
+                <div>
+                    <input class="send" type="submit" value="Отправить">
+                </div>
+       	    </div>
+		</form>
+    	</div>
+	</div>
+</body>
+</html>

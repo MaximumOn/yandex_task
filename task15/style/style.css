@@ -1,0 +1,168 @@
+BODY {
+	background:url("../img/geometry.png");
+	margin:40px 0px 0px 0px;
+	font-size:10pt;
+	font-family:Tahoma;
+	padding-bottom:50px;
+	padding-top:10px;
+}
+
+H1 {
+	font-size:12pt;
+}
+
+H2 {
+	font-size:12pt;
+}
+
+.fixed-wrap {
+	background:url('../img/wall.png');
+	width:100%;
+	height:50px;
+	top:0;
+	box-shadow:0px 1px 2px 1px #aaa;
+	position:fixed;
+}
+
+.fixed-wrap1000 {
+	width:1000px;
+	height:50px;
+	margin:auto;
+}
+
+.fixed-title {
+	padding:5px;
+	color:#fff;
+	text-shadow: 1px 2px 1px #444;
+	float:left;
+}
+
+.fixed-status {
+	color:#fff;
+	margin:16px 20px 0 0;
+	float:right;
+}
+
+.count {
+	font-weight:bold;
+}
+
+.wrap1000 {
+	background:#ffffff;
+	width:1000px;
+	height:auto;
+	margin:auto;
+	box-shadow:0px 1px 2px 1px #aaa;
+}
+
+.header {
+	margin-top:10px;
+}
+
+.anketa {
+	width:900px;
+	margin:auto;
+	padding:10px 30px 20px 30px;
+
+}
+
+.question {
+	margin-bottom:5px;
+}
+
+.question-num-wrap {
+	width:100%;
+	height:35px;
+	border-bottom:1px dashed #d4d4d4;
+	cursor:pointer;
+}
+
+.question-num {
+	width:826px;
+	height:30px;
+	padding:5px 0 0 5px;
+	font-weight:bold;
+	font-size:12pt;
+	float:left;
+}
+
+.arrow-up {
+	background:url('../img/up_arrow.png');
+	width:26px;
+	height:26px;
+	margin:4px;
+	float:left;
+}
+
+.arrow-down {
+	background:url('../img/down_arrow.png');
+	width:26px;
+	height:26px;
+	margin:4px;
+	float:left;
+}
+
+.error1 {
+	background:url('../img/error.png') no-repeat;
+	width:25px;
+	height:18px;
+	margin:5px;
+	float:right;
+}
+
+.good {
+	background:url('../img/good.png') no-repeat;;
+	width:25px;
+	height:18px;
+	margin:5px;
+	float:right;
+}
+
+
+.question-answer {
+	width:100%;
+	height:auto;
+	display:none;
+	clear:both;
+}
+
+.question-text {
+	padding:10px;
+}
+
+.question-input-area {
+	width:870px;
+	height:20px;
+	margin:0 10px 10px 10px;
+}
+
+.question-textarea-area {
+	width:870px;
+	height:80px;
+	margin:0 10px 10px 10px;
+	resize:vertical;
+}
+
+.about-candidate-input {
+	width:500px;
+	height:20px;
+}
+
+.about-candidate-textarea {
+	width:500px;
+	height:20px;
+}
+
+.send {
+	background:#f7f7f7;
+	width:100px;
+	height:40px;
+	border:none;
+	box-shadow:1px 1px 1px #888;
+	margin-top:20px;
+	cursor:pointer;
+}
+
+.send:hover {
+	box-shadow:1px 1px 3px #777;
+}
